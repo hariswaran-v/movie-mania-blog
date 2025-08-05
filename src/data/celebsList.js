@@ -223,10 +223,10 @@ export const celebrities = {
     },
     {
       id: 7,
-      name: "Jason Statham",
-      image: "/assets/images/card-img/hollywood/celebs/jason-statham.jpg",
+      name: "Will Smith",
+      image: "/assets/images/card-img/hollywood/celebs/will-smith.jpg",
       movies: 40,
-      awards: 9, // Action awards, MTV nominations
+      awards: 55, // Oscar, Grammy, Golden Globes, etc.
     },
     {
       id: 8,
@@ -258,10 +258,10 @@ export const celebrities = {
     },
     {
       id: 12,
-      name: "Will Smith",
-      image: "/assets/images/card-img/hollywood/celebs/will-smith.jpg",
+      name: "Jason Statham",
+      image: "/assets/images/card-img/hollywood/celebs/jason-statham.jpg",
       movies: 40,
-      awards: 55, // Oscar, Grammy, Golden Globes, etc.
+      awards: 9, // Action awards, MTV nominations
     },
   ],
 };
