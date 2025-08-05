@@ -181,31 +181,87 @@ export const celebrities = {
   hollywoodCelebs: [
     {
       id: 1,
-      name: "Tom Holland",
-      image: "/assets/images/card-img/hollywood/celebs/Tomholland.jpg",
-      movies: 20, // Approx as of 2025
-      awards: 11, // Including Teen Choice, BAFTA Rising Star, etc.
+      name: "Jackie Chan",
+      image: "/assets/images/card-img/hollywood/celebs/jackie-chan.jpg",
+      movies: 150,
+      awards: 50, // Including Honorary Oscar, Lifetime Achievement Awards, etc.
     },
     {
       id: 2,
-      name: "Robert Pattinson",
-      image: "/assets/images/card-img/hollywood/celebs/Robert.jpg",
-      movies: 35, // Including Twilight saga, The Batman, etc.
-      awards: 16, // Including MTV Movie Awards, etc.
+      name: "Dwayne 'The Rock' Johnson",
+      image: "/assets/images/card-img/hollywood/celebs/rock.jpg",
+      movies: 45,
+      awards: 18, // People's Choice, Teen Choice, etc.
     },
     {
       id: 3,
-      name: "Keanu Reeves",
-      image: "/assets/images/card-img/hollywood/celebs/Keanu.jpg",
-      movies: 55, // Including Matrix, John Wick franchises
-      awards: 14, // Including MTV, Blockbuster Entertainment, etc.
+      name: "Tom Cruise",
+      image: "/assets/images/card-img/hollywood/celebs/tom-cruise.jpg",
+      movies: 50,
+      awards: 41, // Golden Globes, People's Choice, MTV Movie Awards
     },
     {
       id: 4,
-      name: "Tom Cruise",
-      image: "/assets/images/card-img/hollywood/celebs/Tom.jpg",
-      movies: 50, // Including Mission Impossible, Top Gun, etc.
-      awards: 41, // Including Golden Globes, People's Choice, etc.
+      name: "Bruce Lee",
+      image: "/assets/images/card-img/hollywood/celebs/bruce-lee.jpg",
+      movies: 25,
+      awards: 12, // Martial Arts Halls of Fame, Legacy Awards, etc.
+    },
+    {
+      id: 5,
+      name: "Emma Watson",
+      image: "/assets/images/card-img/hollywood/celebs/emma-watson.jpg",
+      movies: 20,
+      awards: 25, // Teen Choice, MTV, BAFTA, etc.
+    },
+    {
+      id: 6,
+      name: "Gal Gadot",
+      image: "/assets/images/card-img/hollywood/celebs/gal-gadot.jpg",
+      movies: 15,
+      awards: 10, // Teen Choice, Critics Awards
+    },
+    {
+      id: 7,
+      name: "Jason Statham",
+      image: "/assets/images/card-img/hollywood/celebs/jason-statham.jpg",
+      movies: 40,
+      awards: 9, // Action awards, MTV nominations
+    },
+    {
+      id: 8,
+      name: "Mark Ruffalo",
+      image: "/assets/images/card-img/hollywood/celebs/mark-ruffalo.jpg",
+      movies: 35,
+      awards: 23, // Emmy, SAG Awards, Oscar Nominations, etc.
+    },
+    {
+      id: 9,
+      name: "Paul Walker",
+      image: "/assets/images/card-img/hollywood/celebs/paul-walker.jpg",
+      movies: 30,
+      awards: 12, // MTV, Teen Choice, posthumous awards
+    },
+    {
+      id: 10,
+      name: "Tom Holland",
+      image: "/assets/images/card-img/hollywood/celebs/tom-holland.jpg",
+      movies: 20,
+      awards: 11, // BAFTA, Teen Choice, etc.
+    },
+    {
+      id: 11,
+      name: "Vin Diesel",
+      image: "/assets/images/card-img/hollywood/celebs/vin-diesel.jpg",
+      movies: 35,
+      awards: 14, // MTV, People’s Choice, etc.
+    },
+    {
+      id: 12,
+      name: "Will Smith",
+      image: "/assets/images/card-img/hollywood/celebs/will-smith.jpg",
+      movies: 40,
+      awards: 55, // Oscar, Grammy, Golden Globes, etc.
     },
   ],
 };

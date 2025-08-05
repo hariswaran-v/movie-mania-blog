@@ -10,7 +10,6 @@ import {
 import { moviesList } from "../data/moviesList";
 import { celebrities } from "../data/celebsList";
 
-
 const { kollywoodMovies } = moviesList;
 const { kollywoodCelebs } = celebrities;
 
