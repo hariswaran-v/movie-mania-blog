@@ -120,7 +120,7 @@ const MovieCard = memo(({ movie, onKnowMore }) => {
 // Hollywood Celebrity Card Component
 const CelebCard = memo(({ celeb }) => {
   return (
-    <div className="group bg-gradient-to-br from-blue-900/20 to-gray-900 rounded-xl p-5 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-blue-500/20 hover:border-blue-500/40">
+    <div className="group bg-gradient-to-br from-blue-900/20 to-gray-900 rounded-xl p-5 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-blue-500/20 hover:border-blue-500/40 min-w-[320px]">
       <div className="flex items-center space-x-4">
         <div className="relative">
           <img
@@ -242,6 +242,93 @@ const MovieCarousel = ({ movies, onKnowMore }) => {
   );
 };
 
+// Celebrity Carousel Component
+const CelebCarousel = ({ celebrities }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+
+  const nextSlide = useCallback(() => {
+    setCurrentIndex((prev) => (prev + 1) % Math.max(1, celebrities.length - 3));
+  }, [celebrities.length]);
+
+  const prevSlide = useCallback(() => {
+    setCurrentIndex(
+      (prev) =>
+        (prev - 1 + Math.max(1, celebrities.length - 3)) %
+        Math.max(1, celebrities.length - 3)
+    );
+  }, [celebrities.length]);
+
+  // Auto-play effect
+  React.useEffect(() => {
+    if (!isAutoPlaying) return;
+
+    const interval = setInterval(nextSlide, 4500);
+    return () => clearInterval(interval);
+  }, [nextSlide, isAutoPlaying]);
+
+  return (
+    <div
+      className="relative group"
+      onMouseEnter={() => setIsAutoPlaying(false)}
+      onMouseLeave={() => setIsAutoPlaying(true)}
+    >
+      {/* Navigation Buttons */}
+      <button
+        onClick={prevSlide}
+        className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-blue-600/50 hover:bg-blue-600/70 text-white p-3 rounded-full backdrop-blur-sm transition-all duration-300 hover:scale-110 opacity-0 group-hover:opacity-100"
+        aria-label="Previous celebrities"
+      >
+        <ChevronLeft className="w-6 h-6" />
+      </button>
+
+      <button
+        onClick={nextSlide}
+        className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-blue-600/50 hover:bg-blue-600/70 text-white p-3 rounded-full backdrop-blur-sm transition-all duration-300 hover:scale-110 opacity-0 group-hover:opacity-100"
+        aria-label="Next celebrities"
+      >
+        <ChevronRight className="w-6 h-6" />
+      </button>
+
+      {/* Celebrity Slider */}
+      <div className="overflow-hidden px-12">
+        <div
+          className="flex transition-all duration-700 ease-out gap-6"
+          style={{
+            transform: `translateX(-${
+              currentIndex * (100 / Math.min(4, celebrities.length))
+            }%)`,
+          }}
+        >
+          {celebrities.map((celeb) => (
+            <div key={celeb.id} className="flex-none w-1/4">
+              <CelebCard celeb={celeb} />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Enhanced Indicators */}
+      <div className="flex justify-center space-x-3 mt-6">
+        {Array.from({ length: Math.max(1, celebrities.length - 3) }).map(
+          (_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`transition-all duration-300 rounded-full ${
+                index === currentIndex
+                  ? "w-8 h-3 bg-gradient-to-r from-blue-500 to-blue-600 scale-125"
+                  : "w-3 h-3 bg-gray-600 hover:bg-gray-500 hover:scale-110"
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          )
+        )}
+      </div>
+    </div>
+  );
+};
+
 // Main Hollywood Component
 const Hollywood = () => {
   const handleKnowMore = useCallback((movie) => {
@@ -287,11 +374,8 @@ const Hollywood = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {hollywoodCelebs.map((celeb) => (
-              <CelebCard key={celeb.id} celeb={celeb} />
-            ))}
-          </div>
+          {/* Celebrity Carousel */}
+          <CelebCarousel celebrities={hollywoodCelebs} />
         </div>
 
         {/* Hollywood Stats Section */}
