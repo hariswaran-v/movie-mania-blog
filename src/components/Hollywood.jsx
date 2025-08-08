@@ -29,7 +29,10 @@ const MovieCard = memo(({ movie, onKnowMore }) => {
   };
 
   return (
-    <div className="group relative bg-gradient-to-br from-blue-900/20 to-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-blue-500/20 hover:border-blue-500/40">
+    <section
+      className="group relative bg-gradient-to-br from-blue-900/20 to-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-blue-500/20 hover:border-blue-500/40"
+      id="hollywood"
+    >
       {/* Movie Poster */}
       <div className="relative aspect-[2] overflow-hidden">
         {!imageLoaded && !imageError && (
@@ -113,7 +116,7 @@ const MovieCard = memo(({ movie, onKnowMore }) => {
           <span>Watch Trailer</span>
         </button>
       </div>
-    </div>
+    </section>
   );
 });
 

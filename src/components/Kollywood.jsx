@@ -92,7 +92,10 @@ const MovieCard = memo(({ movie, onKnowMore }) => {
 // Celebrity Card Component
 const CelebCard = memo(({ celeb }) => {
   return (
-    <div className="group bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-4 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 min-w-[280px]">
+    <section
+      className="group bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-4 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 min-w-[280px]"
+      id="kollywood"
+    >
       <div className="flex items-center space-x-4">
         <div className="relative">
           <img
@@ -115,7 +118,7 @@ const CelebCard = memo(({ celeb }) => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 });
 

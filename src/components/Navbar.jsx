@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { Film, Linkedin, Github, Instagram, Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("kollywood");
+  const navigate = useNavigate();
 
   const navigationItems = [
     { name: "Kollywood", path: "kollywood" },
@@ -36,6 +38,7 @@ const Navbar = () => {
 
   const handleNavClick = (path) => {
     setActiveLink(path);
+    navigate(`/${path}`);
     setIsMenuOpen(false);
   };
 
@@ -44,7 +47,10 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo Section */}
-          <div className="flex items-center space-x-3 group transition-all duration-300 hover:scale-105 cursor-pointer">
+          <Link
+            to="/"
+            className="flex items-center space-x-3 group transition-all duration-300 hover:scale-105 cursor-pointer"
+          >
             <div className="relative">
               <Film className="text-red-500 w-8 h-8 group-hover:text-red-400 transition-colors duration-300" />
               <div className="absolute -inset-1 bg-red-500/20 rounded-full blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -57,7 +63,7 @@ const Navbar = () => {
                 BLOG
               </div>
             </div>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-1">

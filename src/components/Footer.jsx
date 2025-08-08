@@ -10,7 +10,16 @@ const Footer = () => {
           © {new Date().getFullYear()}&nbsp;
           <span className="font-semibold text-white">MovieManiaBlog</span>
           .&nbsp; All rights reserved by{" "}
-          <span className="text-blue-400 font-medium">Hariswaran</span>.
+          <span className="text-blue-400 font-medium">
+            <a
+              href="https://www.linkedin.com/in/hariswaran-venkatesh/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Hariswaran
+            </a>
+          </span>
+          .
         </div>
 
         {/* Social Icons */}
