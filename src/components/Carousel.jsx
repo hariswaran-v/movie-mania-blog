@@ -3,8 +3,10 @@ import React, { useState, useEffect } from "react";
 import img1 from "/assets/images/img-1.jpg";
 import img2 from "/assets/images/img-2.avif";
 import img3 from "/assets/images/img-3.jpg";
+import img4 from "/assets/images/img-4.jpg";
+import { img } from "framer-motion/client";
 
-const images = [img1, img2, img3];
+const images = [img1, img2, img3, img4];
 
 const Carousel = () => {
   const [current, setCurrent] = useState(0);
